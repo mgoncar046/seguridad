@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Conceptual: Legislación y Normativa en Seguridad Informática (2º SMR)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .node-connector {
+            position: relative;
+        }
+        .node-connector::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background-color: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen pb-16">
+
+    <!-- Header Profesora -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 bg-indigo-600 rounded-xl text-white shadow-lg shadow-indigo-500/30">
+                    <i data-lucide="shield-check" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-white tracking-tight">Seguridad Informática — 2º SMR</h1>
+                    <p class="text-xs text-indigo-400 font-medium">Guía Visual de Legislación y Normativa Digital</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
+                <button onclick="setView('map')" id="btn-map" class="px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow">
+                    <i data-lucide="git-fork" class="w-4 h-4"></i> Mapa Conceptual
+                </button>
+                <button onclick="setView('cards')" id="btn-cards" class="px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 text-slate-400 hover:text-white">
+                    <i data-lucide="layout-grid" class="w-4 h-4"></i> Fichas y Ejemplos
+                </button>
+                <button onclick="setView('quiz')" id="btn-quiz" class="px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 text-slate-400 hover:text-white">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i> Comprueba tu Nivel
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Contexto -->
+    <section class="max-w-7xl mx-auto px-4 pt-8 pb-4">
+        <div class="bg-gradient-to-r from-indigo-900/40 via-purple-900/20 to-slate-900 border border-indigo-500/20 rounded-2xl p-6 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-indigo-400">
+                <i data-lucide="scale" class="w-64 h-64"></i>
+            </div>
+            <div class="max-w-3xl">
+                <span class="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-bold rounded-full mb-3 border border-indigo-500/30">
+                    💡 ¿Por qué debo aprender esto si soy técnico de SMR?
+                </span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">
+                    Como técnico, tus configuraciones tienen impacto legal.
+                </h2>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    Instalar un software sin licencia, publicar las notas de los alumnos en un grupo público de WhatsApp, o no proteger los datos de clientes de una PyME puede acarrear multas millonarias o incluso penas de cárcel. Aquí tienes el mapa imprescindible para trabajar seguro.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 mt-4">
+
+        <!-- VISTA 1: MAPA CONCEPTUAL ORGANIZADO -->
+        <div id="view-map" class="space-y-8">
+            <div class="text-center my-4">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Estructura Global de las Leyes en España y UE</span>
+            </div>
+
+            <!-- Nodo Raíz -->
+            <div class="flex justify-center">
+                <div class="bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 rounded-2xl shadow-xl shadow-indigo-950/50 text-center border border-indigo-400/30">
+                    <span class="text-xs text-indigo-200 font-bold uppercase tracking-widest block">Marco Regulatorio</span>
+                    <h3 class="text-2xl font-black text-white">LEGISLACIÓN Y NORMATIVA DE SEGURIDAD</h3>
+                </div>
+            </div>
+
+            <!-- Grid de Categorías Principales -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 1. PROTECCIÓN DE DATOS -->
+                <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 hover:border-emerald-500/50 transition shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl border border-emerald-500/30">
+                                <i data-lucide="lock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-emerald-400 font-semibold uppercase">Bloque 01</span>
+                                <h4 class="text-lg font-bold text-white">Protección de Datos</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-4">Garantiza el derecho fundamental al honor y la privacidad de las personas.</p>
+                        
+                        <div class="space-y-2">
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-emerald-400 block">RGPD (UE) + LOPDGDD (España)</span>
+                                <p class="text-xs text-slate-400 mt-1">Regulan el tratamiento de datos personales, consentimiento explícito, derecho al olvido y sanciones de la AEPD.</p>
+                            </div>
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-emerald-400 block">Principio de Seguridad</span>
+                                <p class="text-xs text-slate-400 mt-1">Obligación de aplicar medidas técnicas (cifrado, backups, control de acceso).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400 font-medium">📌 Caso real: WhatsApp escolar</span>
+                        <button onclick="showModal('datos')" class="text-xs text-emerald-400 hover:underline font-semibold">Ver ejemplo →</button>
+                    </div>
+                </div>
+
+                <!-- 2. DELITOS INFORMÁTICOS -->
+                <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 hover:border-red-500/50 transition shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2.5 bg-red-500/20 text-red-400 rounded-xl border border-red-500/30">
+                                <i data-lucide="gavel" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-red-400 font-semibold uppercase">Bloque 02</span>
+                                <h4 class="text-lg font-bold text-white">Código Penal (Ciberdelitos)</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-4">Aplica penas de prisión y multas a acciones maliciosas en sistemas informáticos.</p>
+                        
+                        <div class="space-y-2">
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-red-400 block">Acceso No Autorizado (Hacking)</span>
+                                <p class="text-xs text-slate-400 mt-1">Entrar a un sistema ajeno sin permiso, aunque no rompas nada.</p>
+                            </div>
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-red-400 block">Daños e Infección (Ransomware)</span>
+                                <p class="text-xs text-slate-400 mt-1">Borrar datos, cifrar archivos o paralizar redes de empresas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400 font-medium">📌 Caso real: Cambiar notas</span>
+                        <button onclick="showModal('delitos')" class="text-xs text-red-400 hover:underline font-semibold">Ver ejemplo →</button>
+                    </div>
+                </div>
+
+                <!-- 3. SERVICIOS DIGITALES Y COMERCIO -->
+                <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 hover:border-amber-500/50 transition shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2.5 bg-amber-500/20 text-amber-400 rounded-xl border border-amber-500/30">
+                                <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-amber-400 font-semibold uppercase">Bloque 03</span>
+                                <h4 class="text-lg font-bold text-white">LSSI-CE (Comercio Web)</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-4">Regula webs corporativas, tiendas online y comunicaciones comerciales.</p>
+                        
+                        <div class="space-y-2">
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-amber-400 block">Aviso Legal, Cookies y Privacidad</span>
+                                <p class="text-xs text-slate-400 mt-1">Obligación de identificar al dueño de la web y dar control de rastreo.</p>
+                            </div>
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-amber-400 block">Spam y Publicidad Solicitada</span>
+                                <p class="text-xs text-slate-400 mt-1">Prohibido enviar correos publicitarios masivos sin consentimiento previa opción "desuscribir".</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400 font-medium">📌 Caso real: Tienda de componentes</span>
+                        <button onclick="showModal('lssi')" class="text-xs text-amber-400 hover:underline font-semibold">Ver ejemplo →</button>
+                    </div>
+                </div>
+
+                <!-- 4. IDENTIDAD Y FIRMA DIGITAL -->
+                <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 hover:border-blue-500/50 transition shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2.5 bg-blue-500/20 text-blue-400 rounded-xl border border-blue-500/30">
+                                <i data-lucide="fingerprint" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-blue-400 font-semibold uppercase">Bloque 04</span>
+                                <h4 class="text-lg font-bold text-white">Identidad Digital & eIDAS</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-4">Validez legal a firmas electrónicas, DNIe y certificados digitales en la UE.</p>
+                        
+                        <div class="space-y-2">
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-blue-400 block">DNIe y Certificados (FNMT)</span>
+                                <p class="text-xs text-slate-400 mt-1">Permiten autenticación segura mediante criptografía de clave pública (PKI).</p>
+                            </div>
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-blue-400 block">Firma Cualificada</span>
+                                <p class="text-xs text-slate-400 mt-1">Tiene la misma validez jurídica que una firma manuscrita en papel.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400 font-medium">📌 Caso real: Becas y contratos</span>
+                        <button onclick="showModal('firma')" class="text-xs text-blue-400 hover:underline font-semibold">Ver ejemplo →</button>
+                    </div>
+                </div>
+
+                <!-- 5. PROPIEDAD INTELECTUAL Y SOFTWARE -->
+                <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 hover:border-purple-500/50 transition shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2.5 bg-purple-500/20 text-purple-400 rounded-xl border border-purple-500/30">
+                                <i data-lucide="file-code" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-purple-400 font-semibold uppercase">Bloque 05</span>
+                                <h4 class="text-lg font-bold text-white">Propiedad Intelectual (LPI)</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-4">Protege el código fuente, programas, música, libros y derechos de autor.</p>
+                        
+                        <div class="space-y-2">
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-purple-400 block">Licencias de Software</span>
+                                <p class="text-xs text-slate-400 mt-1">Propietarias (EULA/Windows) vs Libres (GPL, MIT, Apache) vs Creative Commons.</p>
+                            </div>
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-purple-400 block">Piratería y Auditorías</span>
+                                <p class="text-xs text-slate-400 mt-1">Uso indebido o distribución no autorizada de software privativo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400 font-medium">📌 Caso real: Licencias en la empresa</span>
+                        <button onclick="showModal('propiedad')" class="text-xs text-purple-400 hover:underline font-semibold">Ver ejemplo →</button>
+                    </div>
+                </div>
+
+                <!-- 6. ESQUEMA NACIONAL DE SEGURIDAD (ENS) & NIS 2 -->
+                <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 hover:border-cyan-500/50 transition shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2.5 bg-cyan-500/20 text-cyan-400 rounded-xl border border-cyan-500/30">
+                                <i data-lucide="server" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-cyan-400 font-semibold uppercase">Bloque 06</span>
+                                <h4 class="text-lg font-bold text-white">ENS & NIS2 (Infraestructuras)</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-4">Normas de seguridad obligatorias para la Administración Pública y servicios esenciales.</p>
+                        
+                        <div class="space-y-2">
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-cyan-400 block">Esquema Nacional de Seguridad (ENS)</span>
+                                <p class="text-xs text-slate-400 mt-1">Niveles de seguridad (Básico, Medio, Alto) para centros educativos, ayuntamientos, hospitales.</p>
+                            </div>
+                            <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700/50">
+                                <span class="text-xs font-bold text-cyan-400 block">Directiva NIS 2 (UE)</span>
+                                <p class="text-xs text-slate-400 mt-1">Ciberseguridad en redes de energía, agua, transporte y telecomunicaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400 font-medium">📌 Caso real: Ciberataque a un hospital</span>
+                        <button onclick="showModal('ens')" class="text-xs text-cyan-400 hover:underline font-semibold">Ver ejemplo →</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- VISTA 2: DETALLE EN FICHAS Y EJEMPLOS DÍA A DÍA -->
+        <div id="view-cards" class="hidden space-y-6">
+            <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-lucide="book-open" class="text-indigo-400"></i> Desglose Pedagógico para Clase
+                </h3>
+                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                    A continuación se detallan los conceptos con **analogías sencillas** pensadas para explicar a alumnado de niveles heterogéneos en 2º de SMR.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Ficha 1 -->
+                    <div class="bg-slate-900 p-5 rounded-xl border-l-4 border-emerald-500">
+                        <span class="text-xs font-bold text-emerald-400 uppercase">Protección de Datos (RGPD)</span>
+                        <h4 class="text-lg font-bold text-white mt-1">¿Qué es un dato personal?</h4>
+                        <p class="text-xs text-slate-300 mt-2">Cualquier información que identifique a un alumno o cliente: DNI, foto, dirección IP, número de teléfono, incluso la voz.</p>
+                        <div class="mt-3 p-3 bg-slate-800/80 rounded-lg text-xs text-slate-300">
+                            <strong>💬 Analogía para clase:</strong> "Tus datos son como las llaves de tu casa. Nadie puede usarlas ni hacer copias sin que tú digas explícitamente que sí."
+                        </div>
+                    </div>
+
+                    <!-- Ficha 2 -->
+                    <div class="bg-slate-900 p-5 rounded-xl border-l-4 border-red-500">
+                        <span class="text-xs font-bold text-red-400 uppercase">Código Penal</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Hacking Curioso vs Ciberdelito</h4>
+                        <p class="text-xs text-slate-300 mt-2">Usar herramientas de auditoría (Wireshark, Nmap) en redes ajenas sin autorización expresa es ilegal, aunque "no rompas nada".</p>
+                        <div class="mt-3 p-3 bg-slate-800/80 rounded-lg text-xs text-slate-300">
+                            <strong>💬 Analogía para clase:</strong> "Forzar la cerradura de la puerta del vecino para ver qué tiene dentro es delito de allanamiento, aunque no te lleves la televisión."
+                        </div>
+                    </div>
+
+                    <!-- Ficha 3 -->
+                    <div class="bg-slate-900 p-5 rounded-xl border-l-4 border-purple-500">
+                        <span class="text-xs font-bold text-purple-400 uppercase">Propiedad Intelectual</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Licencias de Software en SMR</h4>
+                        <p class="text-xs text-slate-300 mt-2">Diferencia clara entre Freeware, Open Source (GPL), Comercial (Propietario) y Software Pirata (Cracks/KMS).</p>
+                        <div class="mt-3 p-3 bg-slate-800/80 rounded-lg text-xs text-slate-300">
+                            <strong>💬 Regla de oro del Técnico:</strong> "Si haces prácticas en una empresa y usas un ejecutable pirata para activar Windows, la responsabilidad civil/penal recae en la empresa y en ti."
+                        </div>
+                    </div>
+
+                    <!-- Ficha 4 -->
+                    <div class="bg-slate-900 p-5 rounded-xl border-l-4 border-blue-500">
+                        <span class="text-xs font-bold text-blue-400 uppercase">Firma y Certificados</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Cómo funciona la autenticación digital</h4>
+                        <p class="text-xs text-slate-300 mt-2">Uso de parejas de claves (Pública y Privada). El DNIe contiene certificados emitidos por la Policía Nacional.</p>
+                        <div class="mt-3 p-3 bg-slate-800/80 rounded-lg text-xs text-slate-300">
+                            <strong>💬 Ejemplo práctico:</strong> Pedir la vida laboral, tramitar la beca MEC o solicitar el certificado del grado de FP desde el ordenador de casa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VISTA 3: QUIZ DE AUTOEVALUACIÓN -->
+        <div id="view-quiz" class="hidden space-y-6">
+            <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 max-w-3xl mx-auto">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="help-circle" class="w-7 h-7 text-indigo-400"></i>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Comprueba lo que has aprendido</h3>
+                        <p class="text-xs text-slate-400">Pon a prueba a tus alumnos con casos reales típicos de exámen o reto rápido.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Pregunta 1 -->
+                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                        <p class="text-sm font-semibold text-white mb-3">1. Un técnico de redes instala un script para ver el tráfico del router del instituto y ver las contraseñas de sus compañeros. ¿Qué normativa viola?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-2.5 bg-slate-800 rounded-lg text-xs text-slate-300 hover:bg-slate-700 transition">A) Solo las normas internas del instituto, no es ilegal.</button>
+                            <button onclick="checkAnswer(this, true)" class="w-full text-left p-2.5 bg-slate-800 rounded-lg text-xs text-slate-300 hover:bg-slate-700 transition">B) Código Penal (Delito de revelación de secretos y acceso no autorizado) y LOPDGDD.</button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-2.5 bg-slate-800 rounded-lg text-xs text-slate-300 hover:bg-slate-700 transition">C) Ley de Servicios de la Sociedad de la Información (LSSI-CE).</button>
+                        </div>
+                        <div class="feedback hidden mt-3 p-2.5 rounded-lg text-xs font-semibold"></div>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                        <p class="text-sm font-semibold text-white mb-3">2. Una tienda informática envía 5.000 correos promocionales a usuarios que jamás han pedido publicidad. ¿Qué ley está incumpliendo?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(this, true)" class="w-full text-left p-2.5 bg-slate-800 rounded-lg text-xs text-slate-300 hover:bg-slate-700 transition">A) LSSI-CE (Prohibición de Spam o comunicaciones no solicitadas).</button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-2.5 bg-slate-800 rounded-lg text-xs text-slate-300 hover:bg-slate-700 transition">B) Ley de Propiedad Intelectual.</button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-2.5 bg-slate-800 rounded-lg text-xs text-slate-300 hover:bg-slate-700 transition">C) Esquema Nacional de Seguridad (ENS).</button>
+                        </div>
+                        <div class="feedback hidden mt-3 p-2.5 rounded-lg text-xs font-semibold"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal de Ejemplos Reales -->
+    <div id="modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function setView(view) {
+            document.getElementById('view-map').classList.add('hidden');
+            document.getElementById('view-cards').classList.add('hidden');
+            document.getElementById('view-quiz').classList.add('hidden');
+
+            document.getElementById('btn-map').className = "px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 text-slate-400 hover:text-white";
+            document.getElementById('btn-cards').className = "px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 text-slate-400 hover:text-white";
+            document.getElementById('btn-quiz').className = "px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 text-slate-400 hover:text-white";
+
+            if (view === 'map') {
+                document.getElementById('view-map').classList.remove('hidden');
+                document.getElementById('btn-map').className = "px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow";
+            } else if (view === 'cards') {
+                document.getElementById('view-cards').classList.remove('hidden');
+                document.getElementById('btn-cards').className = "px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow";
+            } else if (view === 'quiz') {
+                document.getElementById('view-quiz').classList.remove('hidden');
+                document.getElementById('btn-quiz').className = "px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 bg-indigo-600 text-white shadow";
+            }
+        }
+
+        const modalsData = {
+            datos: {
+                title: "🔒 Caso Real: Difusión no autorizada de notas",
+                subtitle: "RGPD & LOPDGDD",
+                body: "Un profesor crea un grupo público de WhatsApp con los alumnos de 2º SMR y comparte un documento PDF con los nombres, DNI completos y notas de la evaluación.<br><br><strong>Consecuencia legal:</strong> La Agencia Española de Protección de Datos (AEPD) considera esto una brecha de seguridad y difusión incontrolada de datos de carácter personal sin consentimiento expreso. Podría derivar en expediente disciplinario y sanción.",
+                smrTip: "<strong>Consejo SMR:</strong> Al administrar plataformas como Moodle, asegúrate de que los listados solo sean visibles individualmente para cada usuario."
+            },
+            delitos: {
+                title: "⚖️ Caso Real: Alteración de expedientes académicos",
+                subtitle: "Código Penal - Art. 197 y 264",
+                body: "Un alumno de FP encuentra la contraseña de la WiFi de administración y entra en el sistema de la secretaría del centro para subirse la nota del módulo de Seguridad.<br><br><strong>Consecuencia legal:</strong> No es una 'chiquillada'. Supone un delito de acceso no autorizado a sistemas informáticos y falsificación de documento público, sancionado con antecedentes penales y penas de prisión.",
+                smrTip: "<strong>Consejo SMR:</strong> Segmentar las VLANs en los centros (red de alumnos separada de la red administrativa)."
+            },
+            lssi: {
+                title: "🛒 Caso Real: Tienda de reparación sin aviso legal",
+                subtitle: "LSSI-CE",
+                body: "Montas una web para tu negocio de reparación de ordenadores. Pones un formulario de contacto y venta de piezas usadas, pero no incluyes el CIF/NIF, dirección física ni la política de cookies obligatoria.<br><br><strong>Consecuencia legal:</strong> Multas administrativas que oscilan desde los 3.000€ hasta los 30.000€ por no informar al consumidor sobre quién está detrás del comercio electrónico.",
+                smrTip: "<strong>Consejo SMR:</strong> Todo CMS (WordPress, PrestaShop) debe llevar plugins de gestión de cookies y pie de página con Aviso Legal."
+            },
+            firma: {
+                title: "✍️ Caso Real: Matrícula y firmas de contratos",
+                subtitle: "Reglamento eIDAS & Ley de Firma",
+                body: "Para tramitar tu beca o matricularte en la Universidad, usas AutoFirma con tu certificado FNMT o DNIe.<br><br><strong>Efecto legal:</strong> Otorga no repudio. El organismo público tiene la garantía matemática e irrefutable de que tú (y solo tú) firmaste la solicitud.",
+                smrTip: "<strong>Consejo SMR:</strong> Enseña a instalar los drivers de lectores de DNIe y los certificados en los almacenes de claves de Windows/Linux."
+            },
+            propiedad: {
+                title: "💻 Caso Real: Software pirata en la PyME de prácticas",
+                subtitle: "Ley de Propiedad Intelectual",
+                body: "En tu empresa de prácticas te piden instalar AutoCAD o Windows activado con un 'KMS Pico' para no pagar la licencia corporativa.<br><br><strong>Consecuencia legal:</strong> En una auditoría de software de BSA, la empresa recibe una inspección judicial y multas elevadas. El instalador puede ser considerado responsable técnico subsidiario.",
+                smrTip: "<strong>Consejo SMR:</strong> Fomenta el uso de licencias Open Source (FreeCAD, LibreOffice, distribuciones Linux) como alternativa legal."
+            },
+            ens: {
+                title: "🏥 Caso Real: Ransomware a un Centro de Salud",
+                subtitle: "Esquema Nacional de Seguridad (ENS)",
+                body: "Un hospital público sufre un cifrado de servidores por no haber aplicado parches de seguridad ni tener política de copias de seguridad desconectadas (Air-Gap).<br><br><strong>Importancia del ENS:</strong> Obliga a todas las Administraciones Públicas a pasar auditorías periódicas de seguridad y contar con planes de contingencia probados.",
+                smrTip: "<strong>Consejo SMR:</strong> La regla 3-2-1 de backups es un mandato obligatorio en entornos del sector público."
+            }
+        };
+
+        function showModal(key) {
+            const data = modalsData[key];
+            if (!data) return;
+
+            document.getElementById('modal-content').innerHTML = `
+                <div class="mb-4">
+                    <span class="text-xs font-bold text-indigo-400 uppercase tracking-wide">${data.subtitle}</span>
+                    <h3 class="text-xl font-bold text-white mt-1">${data.title}</h3>
+                </div>
+                <div class="text-sm text-slate-300 leading-relaxed mb-4">
+                    ${data.body}
+                </div>
+                <div class="bg-indigo-950/50 p-3 rounded-xl border border-indigo-500/30 text-xs text-indigo-200">
+                    ${data.smrTip}
+                </div>
+            `;
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+        function checkAnswer(btn, isCorrect) {
+            const container = btn.parentElement.parentElement;
+            const feedback = container.querySelector('.feedback');
+            
+            feedback.classList.remove('hidden', 'bg-emerald-500/20', 'text-emerald-300', 'border-emerald-500/30', 'bg-red-500/20', 'text-red-300', 'border-red-500/30');
+
+            if (isCorrect) {
+                feedback.innerHTML = "¡Correcto! 🎉 Excelente deducción técnica y legal.";
+                feedback.classList.add('bg-emerald-500/20', 'text-emerald-300', 'border', 'border-emerald-500/30');
+            } else {
+                feedback.innerHTML = "Incorrecto ❌. Revisa los bloques de la infografía.";
+                feedback.classList.add('bg-red-500/20', 'text-red-300', 'border', 'border-red-500/30');
+            }
+        }
+    </script>
+</body>
+</html>
